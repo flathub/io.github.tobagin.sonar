@@ -37,5 +37,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/tobagin/Sonar.git
-        tag: v2.0.3
-        commit: e1451a96c9c531a848578479fe9f5bacd6a9ce87
+        tag: 
+        commit: 
