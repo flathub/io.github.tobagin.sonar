@@ -9,6 +9,7 @@ finish-args:
   - --socket=wayland
   - --device=dri
   - --share=network
+  - --talk-name=org.freedesktop.secrets
 
 cleanup:
   - /include
@@ -22,6 +23,19 @@ cleanup:
   - "*.a"
 
 modules:
+  - name: libsecret
+    buildsystem: meson
+    config-opts:
+      - -Dmanpage=false
+      - -Dvapi=true
+      - -Dgtk_doc=false
+      - -Dbash_completion=disabled
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/GNOME/libsecret.git
+        tag: 0.21.7
+        commit: 0936f740c02b60f02657729cd99f581db4517a41
+
   - name: ngrok
     buildsystem: simple
     build-commands:
@@ -37,5 +51,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/tobagin/Sonar.git
-        tag: v2.1.0
-        commit: 6f300157396fea1ee0bf1c58524814e628de018d
+        tag: v2.2.1
+        commit: 7df253f2a539db8477f2f58b234510b6295584d9
