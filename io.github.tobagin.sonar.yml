@@ -29,7 +29,7 @@ modules:
       - -Dmanpage=false
       - -Dvapi=true
       - -Dgtk_doc=false
-      - -Dbash_completion=false
+      - -Dbash_completion=disabled
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/libsecret.git
