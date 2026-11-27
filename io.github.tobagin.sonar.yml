@@ -23,19 +23,6 @@ cleanup:
   - "*.a"
 
 modules:
-  - name: libsecret
-    buildsystem: meson
-    config-opts:
-      - -Dmanpage=false
-      - -Dvapi=true
-      - -Dgtk_doc=false
-      - -Dbash_completion=disabled
-    sources:
-      - type: git
-        url: https://gitlab.gnome.org/GNOME/libsecret.git
-        tag: 0.21.8
-        commit: 9e52f6ae1c74dba683fb4793d349c26d4c1115b8
-
   - name: ngrok
     buildsystem: simple
     build-commands:
@@ -44,12 +31,12 @@ modules:
     sources:
       - type: file
         url: https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
-        sha256: cec0b4997fcc5f529dfc74bac89050354d11a915f968720600039738fdf330cf
+        sha256: 233e0647849913e6404150c1e9c5e4f31c1368aefee330958d038d7afecb8f2e
         dest-filename: ngrok.tgz
         only-arches: [x86_64]
       - type: file
         url: https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-arm64.tgz
-        sha256: 3b6ba05a9d9585c34157fa0819fa95cdb13839f5b506b9e63204705cf7f79e29
+        sha256: fb41ee8f251969f6e399ef03122f791ae537155dfd9ac4c0baf108aca95c17d7
         dest-filename: ngrok.tgz
         only-arches: [aarch64]
 
@@ -58,5 +45,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/tobagin/Sonar.git
-        tag: v2.6.0
-        commit: 92c1b3bea77282f7205eccfc909a970559a74fa1
+        tag: v2.6.1
+        commit: ff65d9fe48d7d0e3247253d9f2a0058daeaadd16
